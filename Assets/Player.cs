@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-    private int health = 10;
+    public int health = 10;
+    public int maxHealth = 10;
+    public int coins;
     public AudioClip damageSound;
     public AudioSource audioSource;
     public void TakeDamage(int damage)
