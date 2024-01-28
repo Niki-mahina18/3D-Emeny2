@@ -21,9 +21,29 @@ public class CharacterAnim : MonoBehaviour
        bool isWalking = animator.GetBool("isWalking");
        bool isJamp = animator.GetBool("isJamp");
        bool forwardPressend = Input.GetKey("w");
+       bool Run = Input.GetKey("left shift");
 
 
 
+       if (!isWalking && forwardPressend)
+       {
+            animator.SetBool("isWalking",true);
+       }
+
+       if (isWalking && forwardPressend)
+       {
+            animator.SetBool("isWalking",false);
+       }
+
+       if (!isRunning && (forwardPressend && Run))
+       {
+            animator.SetBool("isRunning",true);
+       }
+
+       if (isRunning && (!forwardPressend || !Run))
+       {
+            animator.SetBool("isRunning",false);
+       }
 
     }
 }
