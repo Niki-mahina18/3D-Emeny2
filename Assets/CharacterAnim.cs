@@ -20,8 +20,8 @@ public class CharacterAnim : MonoBehaviour
        bool isRunning = animator.GetBool("isRunning");
        bool isWalking = animator.GetBool("isWalking");
        bool isJamp = animator.GetBool("isJamp");
-       bool forwardPressend = Input.GetKey("w");
-       bool Run = Input.GetKey("left shift");
+       bool forwardPressend = Input.GetKey(KeyCode.W);
+       bool Run = Input.GetKey(KeyCode.LeftShift);
 
 
 
@@ -30,7 +30,7 @@ public class CharacterAnim : MonoBehaviour
             animator.SetBool("isWalking",true);
        }
 
-       if (isWalking && forwardPressend)
+       if (isWalking && !forwardPressend)
        {
             animator.SetBool("isWalking",false);
        }
